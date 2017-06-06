@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Electron Calculator</title>
+  <link rel="stylesheet/less" href="./master.less">
+  <script src="./assets/less/less.js" charset="utf-8"></script>
+
+</head>
+<body>
+  <div id="content">
+    <table>
+      <tr>
+        <td id="display" colspan="4">0</td>
+      </tr>
+      <tr>
+        <td id="clear" colspan="2" onclick="clearPressed()">AC</td>
+        <td id="sign" onclick="swapSignPressed()">+/-</td>
+        <!--
+        <td id="perc">%</td>
+      -->
+        <td id="divide" onclick="operatorPressed('/')">&divide;</td>
+      </tr>
+      <tr>
+        <td id="n7" onclick="numberPressed(7)">7</td>
+        <td id="n8" onclick="numberPressed(8)">8</td>
+        <td id="n9" onclick="numberPressed(9)">9</td>
+        <td id="prod" onclick="operatorPressed('x')">x</td>
+      </tr>
+      <tr>
+        <td id="n4" onclick="numberPressed(4)">4</td>
+        <td id="n5" onclick="numberPressed(5)">5</td>
+        <td id="n6" onclick="numberPressed(6)">6</td>
+        <td id="minus" onclick="operatorPressed('-')">-</td>
+      </tr>
+      <tr>
+        <td id="n1" onclick="numberPressed(1)">1</td>
+        <td id="n2" onclick="numberPressed(2)">2</td>
+        <td id="n3" onclick="numberPressed(3)">3</td>
+        <td id="plus" onclick="operatorPressed('+')">+</td>
+      </tr>
+      <tr>
+        <td id="n0" colspan="2"  onclick="numberPressed(0)">0</td>
+        <td id="comma" onclick="commaSelected()">,</td>
+        <td id="equal" onclick="resultPressed()">=</td>
+      </tr>
+    </table>
+  </div>
+  <script src="calculator.js" charset="utf-8"></script>
+</body>
+</html>

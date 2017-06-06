@@ -1,0 +1,119 @@
+/*
+Calculator Dimensions
+*/
+@h-window: 400px;
+@h-display: 100px;
+@h-rows: (@h-window - @h-display) / 5 ;
+
+@w-window: 300px;
+@w-single: @w-window / 4;
+
+/*
+Colors
+*/
+
+@disp-background : #404040;
+@disp-text : white;
+
+@numbers-background: lightgrey;
+@numbers-text: black;
+
+@operators-background: orange;
+@operators-text: white;
+
+@others-background: #A0A0A0;
+@others-text: @numbers-text;
+
+@border-color: @disp-background;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+
+}
+
+body {
+  font-family: -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+  -webkit-user-select: none;
+  cursor: default;
+}
+
+
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+
+
+
+#content {
+  padding: 0;
+  margin: 0;
+
+  table {
+    width: 100%;
+    height: @h-window;
+    margin: 0;
+    padding: 0;
+    border:0;
+    border-collapse: collapse;
+    tr {
+      border: 0;
+      td {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        height: @h-rows;
+        width: @w-single;
+        box-sizing: border-box;
+        font-size: 35px;
+        font-weight:  100;
+      }
+    }
+  }
+}
+
+#display {
+  background-color: @disp-background;
+  color: @disp-text;
+  text-align: right !important;
+  padding-right: 20px !important;
+  height: @h-display !important;
+  -webkit-app-region: drag !important;
+  font-size: 50px !important;
+
+}
+
+#n0,#n1,#n2,#n3,#n4,#n5,#n6,#n7,#n8,#n9,#comma {
+  background-color: @numbers-background;
+  color: @numbers-text;
+  &:hover {
+    background-color: lighten(@numbers-background, 2%);
+  }
+  &:active {
+    background-color: darken(@numbers-background, 2%);
+  }
+}
+
+#clear,#sign {
+  background: @others-background;
+  color: @others-text;
+  &:hover {
+    background-color: lighten(@others-background, 2%);
+  }
+  &:active {
+    background-color: darken(@others-background, 2%);
+  }
+}
+
+#divide,#prod,#minus,#plus,#equal {
+  background-color: @operators-background;
+  color: @operators-text;
+  &:hover {
+    background-color: lighten(@operators-background, 5%);
+  }
+  &:active {
+    background-color: darken(@operators-background, 2%);
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "electron-calculator",
+  "productName": "ElectronCalculator",
+  "version": "0.1.0",
+  "description": "A Desktop Calculator with Electron",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ivanross@bitbucket.org/ivanross/electron-calculator.git"
+  },
+  "author": "ivanross",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/ivanross/electron-calculator#readme",
+  "devDependencies": {
+    "devtron": "^1.4.0",
+    "electron": "^1.6.10"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+  "false": {}
+}
