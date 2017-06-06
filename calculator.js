@@ -88,7 +88,7 @@ function resultPressed() {
   typingStarted = false;
 }
 
-function swapSignPressed() {
+function toogleSignPressed() {
   if ($("#display").text() != "0") {
     if ($("#display").text().indexOf('-') < 0)   $("#display").text("-"+$("#display").text());
     else $("#display").text($("#display").text().substring(1));
