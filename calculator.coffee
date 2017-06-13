@@ -1,29 +1,29 @@
 $ = require 'jquery'
 
-exports.typingStarted = yes
-exports.operation = undefined
-exports.operationSelected = yes
-exports.numberSaved = 0
+_typingStarted = no
+_operation = undefined
+_operationSelected = no
+_numberSaved = 0
 
-exports.clearPressed = ->
+_clearPressed = ->
   if $('#clear').text() is "C"
     $ '#clear'
     .text "AC"
   else if $("#clear").text() is "AC"
-    @operation = undefined
-    @operationSelected = false
-    @numberSaved = 0
-  @typingStarted = false
+    _operation = undefined
+    _operationSelected = false
+    _numberSaved = 0
+  _typingStarted = false
   $ '#display'
   .text "0"
   return
 
-exports.numberPressed = (n) ->
-  if @typingStarted
+_numberPressed = (n) ->
+  if _typingStarted
     $ "#display"
     .append n
   else
-    @typingStarted = yes if n isnt 0
+    _typingStarted = yes if n isnt 0
     $ "#display"
     .text n
     $ "#clear"
@@ -31,44 +31,44 @@ exports.numberPressed = (n) ->
   console.log "Pressed: #{n}"
   return
 
-exports.commeSelected = ->
-  disp = $ "display"
+_commaSelected = ->
+  disp = $ "#display"
   if disp.text().indexOf('.') < 0
     disp.append '.'
-    @typingStarted = yes
+    _typingStarted = yes
   return
 
-exports.operatorPressed = (op) ->
-  @resultPressed() if @operationSelected
-  @operation = op
-  @typingStarted = no
-  @numberSaved = $ "#display"
+_operatorPressed = (op) ->
+  resultPressed() if _operationSelected
+  _operation = op
+  _typingStarted = no
+  _numberSaved = $ "#display"
   .text()
-  @operationSelected = yes
+  _operationSelected = yes
   return
 
-exports.calculate = (num1,num2) ->
+_calculate = (num1,num2) ->
   num1 = parseFloat num1 if typeof num1 isnt "number"
   num2 = parseFloat num2 if typeof num2 isnt "number"
-  switch @operation
+  switch _operation
     when '+' then num1 + num2
     when '-' then num1 - num2
     when 'x' then num1 * num2
     when '/' then num1 / num2
     else 0
 
-exports.resultPressed = ->
+_resultPressed = ->
   disp = $ "#display"
-  if operationSelected
-    res = @calculate @numberSaved, disp.text()
-    @numberSaved = disp.text()
-  else res = @calculate disp.text(), @numberSaved
-  @operationSelected = no
+  if _operationSelected
+    res = _calculate _numberSaved, disp.text()
+    _numberSaved = disp.text()
+  else res = _calculate disp.text(), _numberSaved
+  _operationSelected = no
   disp.text res
-  @typingStarted = no
+  _typingStarted = no
   return
 
-exports.toggleSignPressed = ->
+_toggleSignPressed = ->
   d = $ "#display"
   unless d.text() is "0"
     if d.text().indexOf('-') < 0
@@ -76,3 +76,16 @@ exports.toggleSignPressed = ->
     else
       d.text d.text().substring 1
   return
+
+exports.typingStarted = _typingStarted
+exports.operation = _operation
+exports.operationSelected = _operationSelected
+exports.numberSaved = _numberSaved
+
+exports.clearPressed = _clearPressed
+exports.numberPressed = _numberPressed
+exports.commaSelected = _commaSelected
+exports.operatorPressed = _operatorPressed
+exports.calculate = _calculate
+exports.resultPressed = _resultPressed
+exports.toggleSignPressed = _toggleSignPressed

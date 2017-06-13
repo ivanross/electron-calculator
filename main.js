@@ -2,12 +2,17 @@ const {app,BrowserWindow} = require('electron')
 const path = require('path');
 const url = require('url');
 const $ = require('jquery')
+require('coffee-script').register()
+const calculator = require('./calculator.coffee')
+
+
 
 let win
 
 function newWindow() {
   win = new BrowserWindow({
-    width: 300,
+    //width: 300,
+    width: 700,
     height: 400,
     frame: false,
     //trasparent:true,
@@ -20,7 +25,7 @@ function newWindow() {
     win = null
     app.quit()
   })
-  //win.webContents.openDevTools()
+  win.webContents.openDevTools()
 }
 
 app.on("ready",() => {

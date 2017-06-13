@@ -43,6 +43,28 @@
       </tr>
     </table>
   </div>
-  <script src="calculator.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    require("coffee-script").register()
+
+    const {
+      clearPressed,
+      numberPressed,
+      commaSelected,
+      operatorPressed,
+      calculate,
+      resultPressed,
+      toggleSignPressed
+    } = require("./calculator.coffee")
+    /*
+    const {
+      typingStarted,
+      operation,
+      operationSelected,
+      numberSaved
+    } = require("./calculator.coffee")
+    */
+
+    // const calculator = require("./calculator.coffee")
+  </script>
 </body>
 </html>
