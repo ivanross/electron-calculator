@@ -1,10 +1,10 @@
 const {app,BrowserWindow} = require('electron')
-//const LocalShortcut = require('electron-localshortcut');
+const localShortcut = require('electron-localshortcut');
 const path = require('path');
 const url = require('url');
 const $ = require('jquery')
 
-const {globalShortcut} = require('electron')
+//const {globalShortcut} = require('electron')
 
 
 let win
@@ -26,11 +26,11 @@ function newWindow() {
   })
   win.webContents.openDevTools()
 
-  globalShortcut.register('1', () => {
+  localShortcut.register(win,'1', () => {
     win.webContents.send('scmex', '#n1');
     console.log("Main listen to key 1");
   });
-  globalShortcut.register('2', () => {
+  localShortcut.register(win,'2', () => {
     win.webContents.send('scmex','#n2')
     console.log("Main 2");
   })
