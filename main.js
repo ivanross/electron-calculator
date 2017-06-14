@@ -3,21 +3,8 @@ const {app,BrowserWindow} = require('electron')
 const path = require('path');
 const url = require('url');
 const $ = require('jquery')
-require('coffee-script').register()
-const calculator = require('./calculator.coffee')
 
-const {ipcMain} = require('electron')
-ipcMain.on('asynchronous-message', (event, arg) => {
-  console.log(arg)  // prints "ping"
-  event.sender.send('asynchronous-reply', 'pong async')
-})
-
-ipcMain.on('synchronous-message', (event, arg) => {
-  console.log(arg)  // prints "ping"
-  event.returnValue = 'pong sync'
-})
-
-
+const {globalShortcut} = require('electron')
 
 
 let win
@@ -38,6 +25,16 @@ function newWindow() {
     app.quit()
   })
   win.webContents.openDevTools()
+
+  globalShortcut.register('1', () => {
+    win.webContents.send('scmex', '#n1');
+    console.log("Main listen to key 1");
+  });
+  globalShortcut.register('2', () => {
+    win.webContents.send('scmex','#n2')
+    console.log("Main 2");
+  })
+
 }
 
 app.on("ready",() => {
