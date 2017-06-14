@@ -44,11 +44,14 @@
     </table>
   </div>
   <script type="text/javascript">
-    require('electron').webFrame.setZoomLevelLimits(1, 1)
+
   </script>
   <script type="text/javascript">
-    require("coffee-script").register()
+    // Disable Zoom
+    require('electron').webFrame.setZoomLevelLimits(1, 1)
 
+    // Load Calculator
+    require("coffee-script").register()
     const {
       clearPressed,
       numberPressed,
@@ -58,14 +61,6 @@
       resultPressed,
       toggleSignPressed
     } = require("./calculator.coffee")
-    /*
-    const {
-      typingStarted,
-      operation,
-      operationSelected,
-      numberSaved
-    } = require("./calculator.coffee")
-    */
 
     const {ipcRenderer} = require('electron')
       console.log(ipcRenderer.sendSync('synchronous-message', 'ping')) // prints "pong"
