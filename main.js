@@ -3,22 +3,7 @@ const {app,BrowserWindow} = require('electron')
 const path = require('path');
 const url = require('url');
 const $ = require('jquery')
-require('coffee-script').register()
-const calculator = require('./calculator.coffee')
-
-const {ipcMain} = require('electron')
-ipcMain.on('asynchronous-message', (event, arg) => {
-  console.log(arg)  // prints "ping"
-  event.sender.send('asynchronous-reply', 'pong async')
-})
-
-ipcMain.on('synchronous-message', (event, arg) => {
-  console.log(arg)  // prints "ping"
-  event.returnValue = 'pong sync'
-})
-
-
-
+const {Menu,MenuItem} = require('electron')
 
 let win
 
@@ -38,10 +23,13 @@ function newWindow() {
     app.quit()
   })
   win.webContents.openDevTools()
+
+
 }
 
 app.on("ready",() => {
     newWindow();
+
 })
 app.on("activate",() => {
   if (win === null) newWindow()
