@@ -10,11 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://ivanross@bitbucket.org/ivanross/electron-calculator.git"
+    "url": "git+https://github.com/ivanross/electron-calculator.git"
   },
   "author": "ivanross",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/ivanross/electron-calculator#readme",
+  "homepage": "https://github.com/ivanross/electron-calculator#electroncalculator",
   "devDependencies": {
     "devtron": "^1.4.0",
     "electron": "^1.6.10"
