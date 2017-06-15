@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Electron Calculator</title>
   <link rel="stylesheet/less" href="./master.less">
-  <script src="./assets/less/less.js" charset="utf-8"></script>
+  <script src="./assets/less/less.min.js" charset="utf-8"></script>
 </head>
 <body>
   <div id="content">
@@ -50,7 +50,7 @@
     require('electron').webFrame.setZoomLevelLimits(1, 1)
 
     //Shortcut
-    require('./keybind-handler.coffee')
+    require('./assets/keybind-handler.coffee')
 
     // Load Calculator
     const {
@@ -60,7 +60,7 @@
       operatorPressed,
       resultPressed,
       toggleSignPressed
-    } = require("./calculator.coffee")
+    } = require("./assets/calculator.coffee")
   </script>
 </body>
 </html>
