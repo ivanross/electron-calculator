@@ -37,3 +37,7 @@ Mousetrap.bind "enter", -> $('#equal').click()
 # Clear
 Mousetrap.bind "backspace", -> $('#clear').click()
 Mousetrap.bind "del", -> $('#clear').click()
+
+# Comma
+Mousetrap.bind ".", -> $('#comma').click()
+Mousetrap.bind ",", -> $('#comma').click()
