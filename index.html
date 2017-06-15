@@ -4,8 +4,7 @@
   <meta charset="utf-8">
   <title>Electron Calculator</title>
   <link rel="stylesheet/less" href="./master.less">
-  <script src="./assets/less/less.js" charset="utf-8"></script>
-
+  <script src="./assets/less/less.min.js" charset="utf-8"></script>
 </head>
 <body>
   <div id="content">
@@ -15,10 +14,7 @@
       </tr>
       <tr>
         <td id="clear" colspan="2" onclick="clearPressed()">AC</td>
-        <td id="sign" onclick="toogleSignPressed()">+/-</td>
-        <!--
-        <td id="perc">%</td>
-      -->
+        <td id="sign" onclick="toggleSignPressed()">+/-</td>
         <td id="divide" onclick="operatorPressed('/')">&divide;</td>
       </tr>
       <tr>
@@ -46,9 +42,25 @@
       </tr>
     </table>
   </div>
-  <script src="calculator.js" charset="utf-8"></script>
   <script type="text/javascript">
+    // CoffeeScript Readable
+    require("coffee-script").register()
+
+    // Disable Zoom
     require('electron').webFrame.setZoomLevelLimits(1, 1)
+
+    //Shortcut
+    require('./assets/keybind-handler.coffee')
+
+    // Load Calculator
+    const {
+      clearPressed,
+      numberPressed,
+      commaSelected,
+      operatorPressed,
+      resultPressed,
+      toggleSignPressed
+    } = require("./assets/calculator.coffee")
   </script>
 </body>
 </html>

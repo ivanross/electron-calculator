@@ -8,9 +8,9 @@ let win
 function newWindow() {
   win = new BrowserWindow({
     width: 300,
+    //width: 700,
     height: 400,
     frame: false,
-    //trasparent:true,
     titleBarStyle: 'hidden',
     resizable: false
   })
@@ -20,7 +20,9 @@ function newWindow() {
     win = null
     app.quit()
   })
+
   //win.webContents.openDevTools()
+  win.webContents.on('devtools-opened',()=>{console.log("DevTools Opened");})
 }
 
 app.on("ready",() => {
