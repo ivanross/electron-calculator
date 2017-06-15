@@ -22,8 +22,8 @@
   "dependencies": {
     "coffee-script": "^1.12.6",
     "electron-localshortcut": "^2.0.0",
-    "ipc": "0.0.1",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "mousetrap": "^1.6.1"
   },
   "false": {}
 }
