@@ -5,14 +5,6 @@
   <title>Electron Calculator</title>
   <link rel="stylesheet/less" href="./master.less">
   <script src="./assets/less/less.js" charset="utf-8"></script>
-  <!-- <script src="./mousetrap.min.js" charset="utf-8"></script>
-  <script type="text/javascript">
-  const $ = require('jquery');
-  Mousetrap.bind('1', () => {
-    console.log("1 pressed");
-    $("#n1").click();
-  })
-  </script> -->
 </head>
 <body>
   <div id="content">
@@ -53,31 +45,22 @@
   <script type="text/javascript">
     // CoffeeScript Readable
     require("coffee-script").register()
+
     // Disable Zoom
     require('electron').webFrame.setZoomLevelLimits(1, 1)
+
     //Shortcut
-    //require('./shortcut-handler.coffee')
     require('./keybind-handler.coffee')
+
     // Load Calculator
     const {
       clearPressed,
       numberPressed,
       commaSelected,
       operatorPressed,
-      calculate,
       resultPressed,
       toggleSignPressed
     } = require("./calculator.coffee")
-
-    //const $ = require('jquery')
-    //const Mousetrap = require('mousetrap')
-
-
-
-
-
-
-
   </script>
 </body>
 </html>

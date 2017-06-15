@@ -28,7 +28,6 @@ _numberPressed = (n) ->
     .text n
     $ "#clear"
     .text "C"
-  console.log "Pressed: #{n}"
   return
 
 _commaSelected = ->
@@ -77,15 +76,12 @@ _toggleSignPressed = ->
       d.text d.text().substring 1
   return
 
-exports.typingStarted = _typingStarted
-exports.operation = _operation
-exports.operationSelected = _operationSelected
-exports.numberSaved = _numberSaved
-
+###
+Exports
+###
 exports.clearPressed = _clearPressed
 exports.numberPressed = _numberPressed
 exports.commaSelected = _commaSelected
 exports.operatorPressed = _operatorPressed
-exports.calculate = _calculate
 exports.resultPressed = _resultPressed
 exports.toggleSignPressed = _toggleSignPressed

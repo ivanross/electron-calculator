@@ -1,7 +1,7 @@
 {
   "name": "electron-calculator",
   "productName": "ElectronCalculator",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A Desktop Calculator with Electron",
   "main": "main.js",
   "scripts": {
@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "coffee-script": "^1.12.6",
-    "electron-localshortcut": "^2.0.0",
     "jquery": "^3.2.1",
     "mousetrap": "^1.6.1"
   },
